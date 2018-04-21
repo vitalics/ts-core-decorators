@@ -15,6 +15,7 @@
         "strict": true,
         "strictFunctionTypes": true,
         "allowJs": true,
+        "outDir": "./dist",
         "lib": [
             "es2015",
             "es2016",
@@ -23,29 +24,6 @@
             "esnext.asynciterable"
         ],
         "baseUrl": ".",
-        "paths": {
-            "ts-core-decorators/decorators": [
-                "./decorators"
-            ],
-            "ts-core-decorators/decorators/collections": [
-                "./decorators/collections"
-            ],
-            "ts-core-decorators/decorators/performance": [
-                "./decorators/performance"
-            ],
-            "ts-core-decorators/decorators/common": [
-                "./decorators/common"
-            ],
-            "ts-core-decorators/services": [
-                "./services"
-            ],
-            "ts-core-decorators/services/log":[
-                "./services/log"
-            ],
-            "ts-core-decorators/services/performance":[
-                "./services/performance"
-            ]
-        }
     },
     "exclude": [
         "node_modules"

@@ -9,11 +9,11 @@ interface PurePropertyInfo {
   fnName?: string;
 }
 
-export function pure<T = NonNullable<T>>(): any {
+export function pure<T>(): any {
   return function(
     target: Object,
     propertyKey: string,
-    descriptorOrIndex: NonNullable<TypedPropertyDescriptor<NonNullable<() => T | undefined>>> | number
+    descriptorOrIndex: TypedPropertyDescriptor<() => T | undefined> | number
   ) {
     if (typeof descriptorOrIndex === 'number') {
       return purePropertyDecorator<T>(target, propertyKey, descriptorOrIndex);
@@ -26,7 +26,7 @@ export function pure<T = NonNullable<T>>(): any {
 function pureMethodDecorator<T>(
   target: Object,
   propertyKey: string,
-  descriptor: NonNullable<TypedPropertyDescriptor<() => T | undefined>>
+  descriptor: TypedPropertyDescriptor<() => T | undefined>
 ) {
   const oldDescriptor = descriptor.value;
   if (!oldDescriptor) {

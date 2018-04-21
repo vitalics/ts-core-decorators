@@ -1,11 +1,11 @@
 import { performance } from 'perf_hooks';
-import { PerformanceService } from 'ts-core-decorators/services/performance';
+import { PerformanceService } from '../../services/performance';
 
 export function timerify<T = any>() {
   return function(
     target: Object,
     propertyKey: string,
-    descriptor: NonNullable<TypedPropertyDescriptor<() => T | void | undefined>>
+    descriptor: TypedPropertyDescriptor<() => T | void | undefined>
   ) {
     if (!PerformanceService.connected) {
       console.warn(`performance service is not connected. connectiong automatically`);

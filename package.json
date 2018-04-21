@@ -1,6 +1,6 @@
 {
   "name": "ts-core-decorators",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "typescript core decorators",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,6 +23,7 @@
   "devDependencies": {
     "@types/node": "^9.6.6",
     "ts-lint": "^4.5.1",
-    "ts-node": "^6.0.0"
+    "ts-node": "^6.0.0",
+    "ts-core-decorators": "^latest"
   }
 }

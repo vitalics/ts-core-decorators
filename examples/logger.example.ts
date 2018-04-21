@@ -1,5 +1,5 @@
-import { Log } from 'ts-core-decorators/decorators/common';
-import { logService } from 'ts-core-decorators/services/log';
+import { Log } from '../decorators/common';
+import { logService } from '../services/log';
 
 @Log({ toConsole: true })
 class Temp {

@@ -1,4 +1,4 @@
-import { LogService } from 'ts-core-decorators/services/log';
+import { LogService } from '../../services/log';
 
 interface LogParameters {
   toConsole?: boolean;
