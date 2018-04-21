@@ -1,0 +1,28 @@
+{
+  "name": "ts-helpers",
+  "version": "1.0.0",
+  "description": "typescript wrappers decorators and services",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [ "decorators", "helpers", "typescript helpers" ],
+  "author": "vitalicset@yandex.ru",
+  "homepage": "git+https://github.com/vitalics/ts-helpers/tree/master",
+  "license": "ISC",
+  "engines": {
+    "vscode": "^0.10.5",
+    "typescript": "^1.8.0"
+  },
+  "readme": "README.md",
+  "dependencies": {
+    "reflect-metadata": "^0.1.12",
+    "tsconfig-paths": "^3.3.1",
+    "typescript": "^2.8.3"
+  },
+  "devDependencies": {
+    "@types/node": "^9.6.6",
+    "ts-lint": "^4.5.1",
+    "ts-node": "^6.0.0"
+  }
+}

@@ -1,0 +1,54 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Example: select",
+            "args": [
+                "-r",
+                "ts-node/register",
+                "-r",
+                "tsconfig-paths/register",
+                "${workspaceFolder}/examples/select.example.ts"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Example: logger",
+            "args": [
+                "-r",
+                "ts-node/register",
+                "-r",
+                "tsconfig-paths/register",
+                "${workspaceFolder}/examples/logger.example.ts"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Example: logger and timerify",
+            "args": [
+                "-r",
+                "ts-node/register",
+                "-r",
+                "tsconfig-paths/register",
+                "${workspaceFolder}/examples/timerify.logger.example.ts"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Example: pure",
+            "args": [
+                "-r",
+                "ts-node/register",
+                "-r",
+                "tsconfig-paths/register",
+                "${workspaceFolder}/examples/pure.example.ts"
+            ]
+        }
+    ],
+    "compounds": []
+}
