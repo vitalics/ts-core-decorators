@@ -8,7 +8,6 @@
         "alwaysStrict": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "isolatedModules": true,
         "noImplicitThis": true,
         "noImplicitAny": true,
         "pretty": true,
@@ -16,7 +15,6 @@
         "strictNullChecks": true,
         "strict": true,
         "strictFunctionTypes": true,
-        "allowJs": true,
         "outDir": "./dist",
         "lib": [
             "es2015",
@@ -28,6 +26,7 @@
         "baseUrl": "."
     },
     "exclude": [
-        "node_modules"
+        "node_modules",
+        "examples"
     ]
 }
