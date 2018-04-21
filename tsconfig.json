@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "module": "commonjs",
+        "moduleResolution": "node",
         "target": "es6",
         "allowUnreachableCode": false,
         "alwaysStrict": true,
@@ -23,7 +24,7 @@
             "es2018",
             "esnext.asynciterable"
         ],
-        "baseUrl": ".",
+        "baseUrl": "."
     },
     "exclude": [
         "node_modules"

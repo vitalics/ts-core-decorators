@@ -20,8 +20,6 @@
             "args": [
                 "-r",
                 "ts-node/register",
-                "-r",
-                "tsconfig-paths/register",
                 "${workspaceFolder}/examples/logger.example.ts"
             ]
         },

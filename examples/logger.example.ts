@@ -1,4 +1,4 @@
-import { Log } from '../decorators/common';
+import { Log } from '../decorators';
 import { logService } from '../services/log';
 
 @Log({ toConsole: true })
