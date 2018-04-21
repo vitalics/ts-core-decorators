@@ -1,20 +1,14 @@
 {
   "name": "ts-core-decorators",
-  "version": "1.0.13",
+  "version": "1.0.13.1",
   "description": "typescript core decorators",
-  "scripts": {
-    "postinstall": "tsc"
-  },
+  "scripts": {},
   "private": false,
-  "main": "./dist/index.js",
-  "keywords": [
-    "decorators",
-    "helpers",
-    "typescript helpers"
-  ],
+  "main": "./index.js",
+  "keywords": [ "decorators", "helpers", "typescript helpers" ],
   "author": "vitalicset@yandex.ru",
   "homepage": "git+https://github.com/vitalics/ts-helpers/tree/master",
-  "license": "ISC",
+  "license": "MIT",
   "engines": {
     "vscode": "^0.10.5",
     "typescript": "^1.8.0"
