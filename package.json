@@ -1,8 +1,7 @@
 {
   "name": "ts-core-decorators",
   "version": "1.0.0",
-  "description": "typescript wrappers decorators and services",
-  "main": "index.js",
+  "description": "typescript core decorators",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

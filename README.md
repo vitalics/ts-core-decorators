@@ -1,4 +1,4 @@
-# ts-helpers
+# typescript core decorators
 ## typescript wrappers decorators and services
 
 Motivation: decorators is cool :heart: :fire:
