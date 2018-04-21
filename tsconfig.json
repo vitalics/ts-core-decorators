@@ -16,6 +16,7 @@
         "strict": true,
         "strictFunctionTypes": true,
         "outDir": "./dist",
+        "declarationDir": "./@types",
         "lib": [
             "es2015",
             "es2016",
