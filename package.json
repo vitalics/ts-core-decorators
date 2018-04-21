@@ -1,9 +1,9 @@
 {
   "name": "ts-core-decorators",
-  "version": "1.0.1",
+  "version": "1.0.11",
   "description": "typescript core decorators",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "tsc"
   },
   "private": false,
   "keywords": [ "decorators", "helpers", "typescript helpers" ],
