@@ -1,4 +1,4 @@
-import { select } from '@typescript/helpers/decorators/collections';
+import { select } from 'ts-core-decorators/decorators/collections';
 
 const map: Map<string, number> = new Map();
 

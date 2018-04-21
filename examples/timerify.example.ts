@@ -1,6 +1,6 @@
-import { timerify } from '@typescript/helpers/decorators/performance';
+import { timerify } from 'ts-core-decorators/decorators/performance';
 
-import { PerformanceService } from '@typescript/helpers/services/performance';
+import { PerformanceService } from 'ts-core-decorators/services/performance';
 
 const performance = PerformanceService.connect(); // one time only. for example on prepare hook
 

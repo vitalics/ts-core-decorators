@@ -24,25 +24,25 @@
         ],
         "baseUrl": ".",
         "paths": {
-            "@typescript/helpers/decorators": [
+            "ts-core-decorators/decorators": [
                 "./decorators"
             ],
-            "@typescript/helpers/decorators/collections": [
+            "ts-core-decorators/decorators/collections": [
                 "./decorators/collections"
             ],
-            "@typescript/helpers/decorators/performance": [
+            "ts-core-decorators/decorators/performance": [
                 "./decorators/performance"
             ],
-            "@typescript/helpers/decorators/common": [
+            "ts-core-decorators/decorators/common": [
                 "./decorators/common"
             ],
-            "@typescript/helpers/services": [
+            "ts-core-decorators/services": [
                 "./services"
             ],
-            "@typescript/helpers/services/log":[
+            "ts-core-decorators/services/log":[
                 "./services/log"
             ],
-            "@typescript/helpers/services/performance":[
+            "ts-core-decorators/services/performance":[
                 "./services/performance"
             ]
         }

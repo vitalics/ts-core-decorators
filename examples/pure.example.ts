@@ -1,4 +1,4 @@
-import { pure } from '@typescript/helpers/decorators/common';
+import { pure } from 'ts-core-decorators/decorators/common';
 
 class Temp {
   constructor() {}
