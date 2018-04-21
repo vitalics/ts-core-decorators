@@ -16,10 +16,10 @@ table of decorators:
 
 usage: `@Log()` decorator
 ```ts
-import { Log } from '@ts-helpers/decorators/common';
-import { logService } from '@ts-helpers/services/log';
+import { Log } from '@typescript/helpers/decorators/common';
+import { logService } from '@typescript/helpers/services/log';
 
-@Log({ toConsole: true }) // logging all function usage and bind to console
+@Log({ toConsole: true })
 class Temp {
   constructor() {}
 
@@ -34,10 +34,9 @@ a.someFn(21);
 logService.writeToFile('./logger.json'); // writing result to file
 ```
 another example:
-
 ```ts
-import { Log } from '@ts-helpers/decorators/common';
-import { logService } from '@ts-helpers/services/log';
+import { Log } from '@typescript/helpers/decorators/common';
+import { logService } from '@typescript/helpers/services/log';
 
 @Log()
 class Temp {
@@ -57,9 +56,9 @@ logService.writeToFile('./logger.json'); // writing result to file
 usage: `@timerify()` decorator
 
 ``` ts
-import { timerify } from '@ts-helpers/decorators/performance';
+import { timerify } from '@typescript/helpers/decorators/performance';
 
-import { PerformanceService } from '@ts-helpers/services/performance';
+import { PerformanceService } from '@typescript/helpers/services/performance';
 
 const performance = PerformanceService.connect(); // one time only. for example on prepare hook
 
@@ -80,7 +79,7 @@ performance.disconect(); // clear GC from performance information. for example o
 
 usage: `@select()` decorator
 ```ts
-import { select } from '@ts-helpers/decorators/collections';
+import { select } from '@typescript/helpers/decorators/collections';
 
 const map: Map<string, number> = new Map();
 
@@ -99,7 +98,7 @@ class Temp {
 
 usage: `@pure()` decorator
 ```ts
-import { pure } from '@ts-helpers/decorators/common';
+import { pure } from '@typescript/helpers/decorators/common';
 
 class Temp {
   constructor() {}

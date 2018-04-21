@@ -1,5 +1,5 @@
 import { performance } from 'perf_hooks';
-import { PerformanceService } from '../../services/performance';
+import { PerformanceService } from '@typescript/helpers/services/performance';
 
 export function timerify<T = any>() {
   return function(

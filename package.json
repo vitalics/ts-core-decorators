@@ -1,6 +1,6 @@
 {
-  "name": "ts-helpers",
-  "version": "1.0.0",
+  "name": "@typescript/helpers",
+  "version": "rc-1.0.0",
   "description": "typescript wrappers decorators and services",
   "main": "index.js",
   "scripts": {

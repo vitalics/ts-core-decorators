@@ -1,5 +1,5 @@
-import { Log } from '@ts-helpers/decorators/common';
-import { logService } from '@ts-helpers/services/log';
+import { Log } from '@typescript/helpers/decorators/common';
+import { logService } from '@typescript/helpers/services/log';
 
 @Log({ toConsole: true })
 class Temp {

@@ -1,4 +1,4 @@
-import { LogService } from '../../services/log';
+import { LogService } from '@typescript/helpers/services/log';
 
 interface LogParameters {
   toConsole?: boolean;

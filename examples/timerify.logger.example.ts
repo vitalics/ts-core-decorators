@@ -1,8 +1,8 @@
-import { timerify } from '@ts-helpers/decorators/performance';
-import { Log } from '@ts-helpers/decorators/common';
+import { timerify } from '@typescript/helpers/decorators/performance';
+import { Log } from '@typescript/helpers/decorators/common';
 
-import { logService } from '@ts-helpers/services/log';
-import { performanceService } from '@ts-helpers/services/performance';
+import { logService } from '@typescript/helpers/services/log';
+import { performanceService } from '@typescript/helpers/services/performance';
 
 @Log()
 class Temp {
