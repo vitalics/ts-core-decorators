@@ -1,9 +1,0 @@
-{
-    "extends": "../tsconfig.json",
-    "compilerOptions": {
-      "outDir": "../decorators"
-    },
-    "exclude": [
-        "node_modules"
-    ]
-}

@@ -1,4 +1,4 @@
-import { pure } from '../decorators/common';
+import { pure } from '../src/decorators/common';
 
 class Temp {
   constructor() {}

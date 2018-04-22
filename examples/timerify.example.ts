@@ -1,6 +1,6 @@
-import { timerify } from '../decorators/performance';
+import { timerify } from '../src/decorators/performance';
 
-import { PerformanceService } from '../services/performance';
+import { PerformanceService } from '../src/services/performance';
 
 const performance = PerformanceService.connect(); // one time only. for example on prepare hook
 
@@ -8,7 +8,7 @@ class Temp {
   constructor() {}
 
   @timerify()
-  public lognTask() {
+  public longTask() {
     return 500;
   }
 }

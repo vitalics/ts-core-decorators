@@ -16,8 +16,8 @@ table of decorators:
 
 usage: `@Log()` decorator
 ```ts
-import { Log } from 'ts-core-decorators/decorators/common';
-import { logService } from 'ts-core-decorators/services/log';
+import { Log } from 'ts-core-decorators/core/decorators/common';
+import { logService } from 'ts-core-decorators/core/services/log';
 
 @Log({ toConsole: true })
 class Temp {
@@ -35,8 +35,8 @@ logService.writeToFile('./logger.json'); // writing result to file
 ```
 another example:
 ```ts
-import { Log } from 'ts-core-decorators/decorators/common';
-import { logService } from 'ts-core-decorators/services/log';
+import { Log } from 'ts-core-decorators/core/decorators/common';
+import { logService } from 'ts-core-decorators/core/services/log';
 
 @Log()
 class Temp {
@@ -56,9 +56,9 @@ logService.writeToFile('./logger.json'); // writing result to file
 usage: `@timerify()` decorator
 
 ``` ts
-import { timerify } from 'ts-core-decorators/decorators/performance';
+import { timerify } from 'ts-core-decorators/core/decorators/performance';
 
-import { PerformanceService } from 'ts-core-decorators/services/performance';
+import { PerformanceService } from 'ts-core-decorators/core/services/performance';
 
 const performance = PerformanceService.connect(); // one time only. for example on prepare hook
 
@@ -66,7 +66,7 @@ class Temp {
   constructor() {}
 
   @timerify()
-  public lognTask() {
+  public longTask() {
     return 500;
   }
 }
@@ -79,7 +79,7 @@ performance.disconect(); // clear GC from performance information. for example o
 
 usage: `@select()` decorator
 ```ts
-import { select } from 'ts-core-decorators/decorators/collections';
+import { select } from 'ts-core-decorators/core/decorators/collections';
 
 const map: Map<string, number> = new Map();
 
@@ -98,7 +98,7 @@ class Temp {
 
 usage: `@pure()` decorator
 ```ts
-import { pure } from 'ts-core-decorators/decorators/common';
+import { pure } from 'ts-core-decorators/core/decorators/common';
 
 class Temp {
   constructor() {}

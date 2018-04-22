@@ -1,4 +1,4 @@
-import { select } from '../decorators/collections';
+import { select } from '../src/decorators/collections';
 
 const map: Map<string, number> = new Map();
 

@@ -1,5 +1,5 @@
 examples
 .vscode
-src/**/*.ts
+src
 
 !core

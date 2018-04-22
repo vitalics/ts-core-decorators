@@ -1,5 +1,5 @@
-import { Log } from '../decorators';
-import { logService } from '../services/log';
+import { Log } from '../src/decorators';
+import { logService } from '../src/services/log';
 
 @Log({ toConsole: true })
 class Temp {
