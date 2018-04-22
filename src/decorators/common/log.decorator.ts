@@ -1,6 +1,6 @@
 import { LogService } from '../../services/log';
 
-interface LogParameters {
+export interface LogParameters {
   toConsole?: boolean;
 }
 

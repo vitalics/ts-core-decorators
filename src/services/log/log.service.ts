@@ -1,7 +1,7 @@
 import { WritableService } from '../types';
 import { writeFileSync } from 'fs';
 
-interface LogInfo {
+export interface LogInfo {
   fnName: string;
   args: string | string[];
 }

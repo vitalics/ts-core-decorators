@@ -15,8 +15,9 @@
         "strictNullChecks": true,
         "strict": true,
         "strictFunctionTypes": true,
-        "outDir": "./dist",
-        "declarationDir": "./@types",
+        "outDir": "./core",
+        "sourceMap": true,
+        "downlevelIteration": true,
         "lib": [
             "es2015",
             "es2016",

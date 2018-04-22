@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 
-type MapLike<K, V> = Map<K, V> | WeakMap<object, V>;
+export type MapLike<K, V> = Map<K, V> | WeakMap<object, V>;
 
 export function select<K, V>(map: MapLike<K, V>, key: K) {
   return function(target: Object, propertyKey: string): void | undefined {
