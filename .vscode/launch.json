@@ -42,6 +42,17 @@
                 "ts-node/register",
                 "${workspaceFolder}/examples/pure.example.ts"
             ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Example: parallel",
+            "args": [
+                "-r",
+                "ts-node/register",
+                "${workspaceFolder}/examples/parallel.example.ts"
+            ],
+            "autoAttachChildProcesses": true
         }
     ],
     "compounds": []
