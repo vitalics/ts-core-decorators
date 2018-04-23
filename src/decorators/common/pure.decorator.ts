@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import { isPrimitive, isUndefined } from 'util';
 
 const puresProperties: PurePropertyInfo[] = [];
@@ -14,7 +15,9 @@ export function pure<T>(): any {
     target: Object,
     propertyKey: string,
     descriptorOrIndex: TypedPropertyDescriptor<() => T | undefined> | number
-  ) {
+  ): MethodDecorator | PropertyDecorator {
+    checkForPurityProperties(target, propertyKey);
+
     if (typeof descriptorOrIndex === 'number') {
       return purePropertyDecorator<T>(target, propertyKey, descriptorOrIndex);
     } else {
@@ -27,22 +30,53 @@ function pureMethodDecorator<T>(
   target: Object,
   propertyKey: string,
   descriptor: TypedPropertyDescriptor<() => T | undefined>
-) {
+): MethodDecorator {
   const oldDescriptor = descriptor.value;
   if (!oldDescriptor) {
-    console.log(`oldDescriptor is undefined`);
-    return;
+    throw new Error(`oldDescriptor is undefined`);
   }
-  descriptor.value = function(...args: any[]): T {
-    // const reMappedPuresDecorators: PurePropertyInfo[] = [];
-    // puresProperties.map((value, index) => {
-    //   console.log(value);
-    // });
+  return (descriptor.value = function(...args: any[]): T {
+    const fnResult = <T>oldDescriptor.apply(this, args);
+    if (typeof fnResult === ('undefined' || 'null')) {
+      try {
+        throw new Error(`function ${propertyKey} result is ${fnResult} and not pure`);
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    return fnResult;
+  });
+}
+
+function purePropertyDecorator<T>(target: Object, propertyKey: string, index: number): PropertyDecorator {
+  const pureProperty: PurePropertyInfo = {
+    index,
+    pure: true,
+    fnName: propertyKey
+  };
+
+  Reflect.defineMetadata(`${target.constructor.name}_${propertyKey}_${index}`, pureProperty, target);
+
+  puresProperties.push(pureProperty);
+
+  Reflect.defineProperty(target, propertyKey, {
+    value: checkForPurityProperties
+  });
+  return () => void 0;
+}
+
+interface Iteratable<T> {
+  [name: string]: T | any;
+}
+
+function checkForPurityProperties(target: Iteratable<Object>, propertyKey: string) {
+  const oldDescriptor = target[propertyKey];
+
+  return (target[propertyKey] = function(...args: any[]) {
     puresProperties.sort((prev, next) => prev.index - next.index);
     const fnwithPuresDecorated = puresProperties.filter((value) => propertyKey === value.fnName);
     if (!args.length && fnwithPuresDecorated.length) {
-      console.log(`${propertyKey} have pures parameters, but you are not set thems`);
-      return <T>{};
+      throw new Error(`${propertyKey} have pures parameters, but they are not defined`);
     }
     for (const item of fnwithPuresDecorated) {
       // tslint:disable-next-line:forin
@@ -75,28 +109,5 @@ function pureMethodDecorator<T>(
         }
       }
     }
-
-    const fnResult = <T>oldDescriptor.apply(this, args);
-    if (typeof fnResult === ('undefined' || 'null')) {
-      try {
-        throw new Error(`function ${propertyKey} result is ${fnResult} and not pure`);
-      } catch (e) {
-        console.log(e);
-      }
-    }
-    return fnResult;
-  };
-}
-
-function purePropertyDecorator<T>(target: Object, propertyKey: string, index: number) {
-  const pureProperty: PurePropertyInfo = {
-    index,
-    pure: true,
-    fnName: propertyKey
-  };
-
-  Reflect.defineMetadata(`${target.constructor.name}_${propertyKey}_${index}`, pureProperty, target);
-
-  puresProperties.push(pureProperty);
-  return <T>{};
+  });
 }

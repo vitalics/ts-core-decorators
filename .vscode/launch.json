@@ -30,8 +30,6 @@
             "args": [
                 "-r",
                 "ts-node/register",
-                "-r",
-                "tsconfig-paths/register",
                 "${workspaceFolder}/examples/timerify.logger.example.ts"
             ]
         },
@@ -42,8 +40,6 @@
             "args": [
                 "-r",
                 "ts-node/register",
-                "-r",
-                "tsconfig-paths/register",
                 "${workspaceFolder}/examples/pure.example.ts"
             ]
         }

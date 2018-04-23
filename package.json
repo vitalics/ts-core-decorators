@@ -1,13 +1,17 @@
 {
   "name": "ts-core-decorators",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "typescript core decorators",
   "scripts": {
     "build": "tsc"
   },
   "private": false,
   "main": "./index.js",
-  "keywords": [ "decorators", "helpers", "typescript helpers" ],
+  "keywords": [
+    "decorators",
+    "helpers",
+    "typescript helpers"
+  ],
   "author": "vitalicset@yandex.ru",
   "homepage": "https://github.com/vitalics/ts-core-decorators",
   "bugs": {

@@ -3,7 +3,7 @@ import { pure } from '../src/decorators/common';
 class Temp {
   constructor() {}
 
-  @pure<number>()
+  @pure()
   public someFn(@pure<number>() someArg?: number, anotherNumber?: number): number {
     return someArg || 1;
   }
@@ -15,5 +15,5 @@ class Temp {
 }
 const temp = new Temp();
 
-temp.someFn(2, 3);
+temp.someFn(1);
 temp.anotherFn(1); // error here. someArg is defined, but anotherNumber is not
