@@ -4,6 +4,18 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "Example: autowired",
+            "args": [
+                "-r",
+                "ts-node/register",
+                "-r",
+                "tsconfig-paths/register",
+                "${workspaceFolder}/examples/autowired.example.ts"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "Example: select",
             "args": [
                 "-r",

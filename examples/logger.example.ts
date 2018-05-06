@@ -1,7 +1,7 @@
-import { Log } from '../src/decorators';
+import { log } from '../src/decorators';
 import { logService } from '../src/services/log';
 
-@Log({ toConsole: true })
+@log({ toConsole: true })
 class Temp {
   constructor() {}
 

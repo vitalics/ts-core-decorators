@@ -8,7 +8,7 @@ export interface LogParameters {
  * Class decorator allows to log all methods calls.
  * Will log method name and its arguments.
  */
-export function Log(logParams: LogParameters = { toConsole: false }): any {
+export function log(logParams: LogParameters = { toConsole: false }): any {
   return function(target: Function) {
     // tslint:disable-next-line:forin
     for (const propertyName of Object.getOwnPropertyNames(target.prototype)) {
