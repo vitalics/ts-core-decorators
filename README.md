@@ -7,16 +7,45 @@ table of decorators:
 
 | decorator |               arguments              |                                         description                                         |      target      |       service      |
 |:---------:|:------------------------------------:|:-------------------------------------------------------------------------------------------:|:----------------:|:------------------:|
-| Log       | toConosle - default is false         | logging all method calls and set to logService                                              |       class      | logService         |
+| log       | toConosle - default is false         | logging all method calls and set to logService                                              |       class      | logService         |
 | timerify  | -                                    | record function time execution. Also have statistic as total time and long execing function |      method      | performanceService |
 | select    | map - Map<K,V> ot WeakMap<V> key - K | Select value by key from map like collection                                                |     property     | -                  |
 | pure      | -                                    | checking function or argument for not undefined and throw error if is not pure              | method, argument | -                  |
+|autowired| args: any[]| creating new instance of type annotation | property | - |
 
 ### want get more usage? see examples below
 
-usage: `@Log()` decorator
+usage: `@autowired()` decorator:
 ```ts
-import { Log } from 'ts-core-decorators/core/decorators/common';
+import { autowired } from '../src/decorators/common';
+
+class Autowired {
+    public readonly someReadOnlyProp = 4;
+}
+
+class Autowired2 {
+    constructor(private prop: string) {
+    }
+}
+
+class Temp {
+
+    @autowired('123')
+    public autoWired2!: Autowired2; // create Autowired2 instance
+
+    @autowired()
+    public autoWired!: Autowired; // note: ! symbol for strict mode
+}
+
+const temp = new Temp();
+console.dir(temp.autoWired); // Autowired {someReadOnlyProp: 4}
+console.dir(temp.autoWired2); // Autowired2 {prop: "123"}
+```
+
+
+usage: `@log()` decorator
+```ts
+import { log } from 'ts-core-decorators/core/decorators/common';
 import { logService } from 'ts-core-decorators/core/services/log';
 
 @Log({ toConsole: true })
