@@ -12,7 +12,8 @@ table of decorators:
 | select    | map - Map<K,V> ot WeakMap<V> key - K | Select value by key from map like collection                                                |     property     | -                  |
 | pure      | -                                    | checking function or argument for not undefined and throw error if is not pure              | method, argument | -                  |
 |autowired| args: any[]| creating new instance of type annotation | property | - |
-
+| save | handler: () => never | make function `save` - if handler is not set - don't stop executing program| method| - |
+| trigger | ProxyObject | make class as Proxy. Make intercept functions, contructor calling and may redirect to new target | class | - |
 ### want get more usage? see examples below
 
 usage: `@autowired()` decorator:
@@ -48,7 +49,7 @@ usage: `@log()` decorator
 import { log } from 'ts-core-decorators/core/decorators/common';
 import { logService } from 'ts-core-decorators/core/services/log';
 
-@Log({ toConsole: true })
+@log({ toConsole: true })
 class Temp {
   constructor() {}
 
@@ -148,5 +149,49 @@ temp.someFn(2, 3);
 temp.anotherFn(1); // runtime error here. someArg is defined, but anotherNumber is not
 ```
 
+
+```ts 
+import { save } from 'ts-core-decorators/core/decorators/common';
+class SaveDecoratorExample {
+    @save()
+    public unsaveFunction(arg: any) {
+        return arg.length > 0;
+    }
+}
+const saveDecoratorExample = new SaveDecoratorExample();
+
+console.log('start executing');
+saveDecoratorExample.unsaveFunction(null);
+console.log('continue executing');
+// start executing
+// cannot read property 'length' of null
+// continue executing
+
+```
+
+``` ts
+import { trigger } from 'ts-core-decorators/core/decorators/common';
+
+@trigger({
+    construct: function (target: any, arrayList: any) {
+        const instance = new target(...arrayList) as Temp;
+        // can use Temp methods here
+        console.dir(instance);
+        return instance;
+    },
+})
+class Temp {
+    constructor() { }
+
+    public longTask() {
+        console.log('long task executed');
+        return 500;
+    }
+}
+
+const temp = new Temp();
+temp.longTask();
+
+```
 More examples? Visit examples folder for more.
 ### Still question or problem? Write issue. Let's create more useful decorators together!

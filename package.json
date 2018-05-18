@@ -1,6 +1,6 @@
 {
   "name": "ts-core-decorators",
-  "version": "1.0.31",
+  "version": "1.0.33",
   "description": "typescript core decorators",
   "scripts": {
     "build": "tsc"

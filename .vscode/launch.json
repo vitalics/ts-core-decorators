@@ -4,6 +4,26 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "Example: trigger",
+            "args": [
+                "-r",
+                "ts-node/register",
+                "${workspaceFolder}/examples/trigger.example.ts"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Example: save",
+            "args": [
+                "-r",
+                "ts-node/register",
+                "${workspaceFolder}/examples/save.example.ts"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "Example: autowired",
             "args": [
                 "-r",
