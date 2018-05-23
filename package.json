@@ -1,12 +1,12 @@
 {
   "name": "ts-core-decorators",
-  "version": "1.0.33",
+  "version": "1.1.2",
   "description": "typescript core decorators",
   "scripts": {
     "build": "tsc"
   },
   "private": false,
-  "main": "./index.js",
+  "main": "./build/index.js",
   "keywords": [
     "decorators",
     "helpers",

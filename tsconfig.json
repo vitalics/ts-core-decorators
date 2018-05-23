@@ -15,7 +15,7 @@
         "strictNullChecks": true,
         "strict": true,
         "strictFunctionTypes": true,
-        "outDir": "./core",
+        "outDir": "./build",
         "sourceMap": true,
         "downlevelIteration": true,
         "lib": [

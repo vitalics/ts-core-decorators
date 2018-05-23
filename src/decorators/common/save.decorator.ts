@@ -1,4 +1,6 @@
-export function save(handler?: () => never): MethodDecorator {
+import { PureError } from '../../errors';
+
+export function save(error?: Error): MethodDecorator {
     return function (
         target: object,
         propertyKey: string | symbol,
@@ -8,14 +10,26 @@ export function save(handler?: () => never): MethodDecorator {
 
         descriptor.value = function (...args: any[]): any {
             try {
-                oldDescriptor.apply(this, args);
+                const fnResult = oldDescriptor.apply(this, args);
+                return fnResult;
             } catch (e) {
-                console.error(e);
-                if (handler) {
-                    handler.apply(this, args);
+                if (error) {
+                    console.error(error);
+                    throw error;
+                }
+                if (e.name === PureError.name) {
+                    const saveError = new SaveError(
+                        `continue executing ${target.constructor.name}.${propertyKey}(), even ${e.target} is not pure`
+                    );
+                    console.error(saveError);
+                } else {
+                    const saveError = new SaveError(`continue executing ${target.constructor.name}.${propertyKey}()`);
+                    console.error(saveError);
                 }
             }
         };
         return descriptor;
     };
 }
+
+class SaveError extends TypeError { }
